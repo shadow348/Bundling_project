@@ -596,6 +596,10 @@ def main(input_data):
     output_file = os.path.join(rf"{outpath}", "depth0.json")
     with open(output_file, "w") as outfile:
         json.dump(listdata, outfile, indent=4)
+
+    output_file = os.path.join(rf"{outpath}", f"depth0_{datetime.now().strftime('%Y%m%d%H%M%S')}.json")
+    with open(output_file, "w") as outfile:
+        json.dump(listdata, outfile, indent=4)
     logger.info(f"Output saved to {output_file}")
 
     with open(fr"{outpath}\completed.txt", "w") as comp:
