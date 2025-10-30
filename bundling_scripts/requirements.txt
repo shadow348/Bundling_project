@@ -1,0 +1,14 @@
+opencv-python
+pyuac
+boto3
+psutil
+easyocr
+requests
+pyautogui
+numpy
+pandas
+pywinauto
+pillow
+torch
+torchvision
+torchaudio

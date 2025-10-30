@@ -1,0 +1,16 @@
+{
+  "taskId": 16,
+  "projectId": 4,
+  "outputFile": "depth0",
+  "vmId": 3,
+  "proxy": "US",
+  "browser": "",
+  "taskwaitingtime": 19800,
+  "exeList": [
+    {
+      "Id": 11,
+      "exePath": "https://pixelsee.app/installer/installer/pixelsee_installer_22.exe?filename=PixelSee_id371304id.exe",
+      "exeName": "PixelSee.exe"
+    }
+  ]
+}
