@@ -1,8 +1,0 @@
-10/22/2025 4:19:09 PMErrorMessage : Object cannot be cast from DBNull to other types.
- Tracing :   at CrawlerService.ServerService.readJsonAndInsertData(String scriptType, Int32 ServerId) in D:\Opera\Opera_automation\CrawlerService\ServerService.cs:line 617
-   at CrawlerService.ServerService.getConfig() in D:\Opera\Opera_automation\CrawlerService\ServerService.cs:line 221
-   at Crawler_WinApp.Program.Main() in D:\Opera\Opera_automation\Crawler_WinApp\Program.cs:line 18
-10/22/2025 4:59:08 PMErrorMessage : Object cannot be cast from DBNull to other types.
- Tracing :   at CrawlerService.ServerService.readJsonAndInsertData(String scriptType, Int32 ServerId) in D:\Opera\Opera_automation\CrawlerService\ServerService.cs:line 617
-   at CrawlerService.ServerService.getConfig() in D:\Opera\Opera_automation\CrawlerService\ServerService.cs:line 221
-   at Crawler_WinApp.Program.Main() in D:\Opera\Opera_automation\Crawler_WinApp\Program.cs:line 18
