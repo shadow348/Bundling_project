@@ -1,27 +1,25 @@
 @echo off
 set REPO=https://github.com/shadow348/Bundling_project.git
-set FOLDER=Bundling
+set FOLDER=Bundling_project
 
 echo 🚀 Cloning %REPO%
 git clone %REPO%
 
 cd %FOLDER%
 
-echo 📦 Installing dependencies...
-pip install -r requirements.txt
 
 echo 📁 Creating empty folders if missing...
 
 rem === Define your empty folders here ===
 set FOLDERS=^
-    bundling\bundling_scripts\backup
-    bundling\bundling_scripts\click_screenshot
-    bundling\bundling_scripts\exe_downloads
-    bundling\bundling_scripts\networklog
-    bundling\bundling_scripts\outpath ^
-    bundling\bundling_scripts\screenshots ^
-    bundling\bundling_scripts\taskCom ^
-    bundling\bundling_scripts\video ^    
+    bundling_scripts\backup ^
+    bundling_scripts\click_screenshot ^
+    bundling_scripts\exe_downloads ^
+    bundling_scripts\networklog ^
+    bundling_scripts\outpath ^
+    bundling_scripts\screenshots ^
+    bundling_scripts\taskCom ^
+    bundling_scripts\video ^    
     
 
 for %%F in (%FOLDERS%) do (
@@ -32,4 +30,7 @@ for %%F in (%FOLDERS%) do (
 )
 
 echo ✅ Setup complete!
+
+echo 📦 Installing dependencies...
+pip install -r requirements.txt
 pause
