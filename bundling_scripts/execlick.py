@@ -48,6 +48,7 @@ stopFilePath = config.get("stopFilePath")
 openh264_path = config.get("openh264_path")
 log_file_path = config.get("log_file_path")
 outpath = config.get("outpath")
+outpath_backup = config.get("outpath_backup")
 click_screenshot = config.get("click_screenshot")
 screenshotpath = config.get("screenshotpath")
 app_path = config.get("app_path")
@@ -252,7 +253,7 @@ def install_exe(path):
                 pyautogui.moveTo(x, y, duration=1)
                 pyautogui.click()
                 screenshots.append(ss)
-                time.sleep(16)
+                time.sleep(180)
                 abc = 1
             else:
                 break
@@ -596,8 +597,8 @@ def main(input_data):
     output_file = os.path.join(rf"{outpath}", "depth0.json")
     with open(output_file, "w") as outfile:
         json.dump(listdata, outfile, indent=4)
-
-    output_file = os.path.join(rf"{outpath}", f"depth0_{datetime.now().strftime('%Y%m%d%H%M%S')}.json")
+    time.sleep(6)
+    output_file = os.path.join(rf"{outpath_backup}", f"depth0_{datetime.now().strftime('%Y%m%d%H%M%S')}.json")
     with open(output_file, "w") as outfile:
         json.dump(listdata, outfile, indent=4)
     logger.info(f"Output saved to {output_file}")
