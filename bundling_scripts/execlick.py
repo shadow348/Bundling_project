@@ -615,7 +615,7 @@ def run_as_admin():
     if not pyuac.isUserAdmin():
         pyuac.runAsAdmin()  # Request admin privileges
     else:
-        input_file = r'C:\bundling\bundling_scripts\conf.json'
+        input_file = 'conf.json'
         """C:\bundling\bundling_scripts\conf\conf.json"""
         try:
             with open(input_file, 'r') as infile:
