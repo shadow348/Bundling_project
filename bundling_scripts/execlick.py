@@ -28,7 +28,7 @@ S3_BUCKET_NAME = 'adwareautomation'
 s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY,
                     region_name=AWS_REGION, verify=True)
 
-with open( r'pathfinder_coup.json', 'r', encoding='utf-8') as file:
+with open( r'patfinder.json', 'r', encoding='utf-8') as file:
     config = json.load(file)
 
 # videoFolderPath = r"C:\bundling\bundling_scripts\video"
