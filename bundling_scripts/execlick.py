@@ -209,6 +209,68 @@ def download_exe_file(exe_url, save_dir=r"\exe_downloads"):
         return None
 
 
+def download_file_and_get_exe(url):
+    try:
+        # Create a folder to store downloads
+        downloads_folder = os.path.join(os.getcwd(), "exe_downloads")
+        os.makedirs(downloads_folder, exist_ok=True)
+
+        # Extract filename from URL
+        file_name = os.path.basename(url).split("?")[0]
+        if not file_name:
+            file_name = "downloaded_file"
+
+        file_path = os.path.join(downloads_folder, file_name)
+
+        # Download the file
+        print(f"⬇️ Downloading {file_name} ...")
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+        with open(file_path, "wb") as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+
+        # Check if it's a ZIP file
+        if file_name.lower().endswith(".zip"):
+            print("📦 ZIP file detected — extracting...")
+            extract_folder = os.path.join(downloads_folder, "extracted_files")
+            os.makedirs(extract_folder, exist_ok=True)
+
+            with zipfile.ZipFile(file_path, "r") as zip_ref:
+                zip_ref.extractall(extract_folder)
+
+            # Find .exe inside the extracted content
+            exe_files = []
+            for root, dirs, files in os.walk(extract_folder):
+                for file in files:
+                    if file.lower().endswith(".exe"):
+                        full_path = os.path.abspath(os.path.join(root, file))
+                        exe_files.append(full_path)
+
+            if exe_files:
+                print("✅ Found EXE inside ZIP:")
+                print(exe_files[0])
+                return exe_files[0]
+            else:
+                print("⚠️ No EXE file found in ZIP.")
+                return ""
+
+        # If directly an EXE file
+        elif file_name.lower().endswith(".exe"):
+            full_path = os.path.abspath(file_path)
+            print("✅ EXE downloaded directly:")
+            print(full_path)
+            return full_path
+
+        else:
+            print("⚠️ Not a ZIP or EXE file.")
+            return ""
+
+    except Exception as e:
+        print(f"⚠️ Error occurred: {e}")
+        return ""
+
+
 def disable_proxy():
     try:
         internet_settings = winreg.OpenKey(winreg.HKEY_CURRENT_USER,
@@ -461,7 +523,8 @@ def main(input_data):
             "networkLogFilePath": "",
             "AutomationEnd": ""
         }
-        downloaded_exe_path = download_exe_file(installer.get("exePath"))
+        # downloaded_exe_path = download_exe_file(installer.get("exePath"))
+        downloaded_exe_path = download_file_and_get_exe(installer.get("exePath"))
         if not os.path.exists(downloaded_exe_path):
             logger.warning(f"Installer not found: {downloaded_exe_path}")
             continue
