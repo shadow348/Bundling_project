@@ -4,7 +4,7 @@
     "stopFilePath": "C:\\Bundling_project\\bundling_scripts\\taskCom\\completed.txt",
     "openh264_path": "C:\\Bundling_project\\bundling_scripts\\openh264_path\\openh264-1.8.0-win64.dll",
     "log_file_path": "C:\\Bundling_project\\bundling_scripts\\app.log",
-    "outpath": "C:\\Bundling_project\\bundling_scripts\\output",
+    "outpath": "C:\\Bundling_project\\bundling_scripts\\outpath",
     "outpath_backup": "C:\\Bundling_project\\bundling_scripts\\output_backup",
     "click_screenshot": "C:\\Bundling_project\\bundling_scripts\\click_screenshot",
     "screenshotpath": "C:\\Bundling_project\\bundling_scripts\\screenshots",
