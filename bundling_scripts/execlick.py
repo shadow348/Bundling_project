@@ -624,7 +624,7 @@ def main(input_data):
                 tltype = 'Adware'
                 client_name = 'opera'
                 output_pathhh = file_uploader_api(output_pathhh, filtype, tltype, client_name)
-                logger.info(f"logs uploaded to local: {videoS3}")
+                logger.info(f"logs uploaded to local: {output_pathhh}")
             except Exception as ie:
                 logger.info(f"error while uploading log to local: {ie}")
                 try:
@@ -634,7 +634,7 @@ def main(input_data):
                     tltype = 'Adware'
                     client_name = 'opera'
                     output_pathhh = file_uploader_api(output_pathhh, filtype, tltype, client_name)
-                    logger.info(f"logs uploaded to local: {videoS3}")
+                    logger.info(f"logs uploaded to local: {output_pathhh}")
                     # videoupload = upload_to_s3(videoS3, s3, S3_BUCKET_NAME)
                 except Exception as e:
                     logger.info(f"error while uploading log to local: {e}")
