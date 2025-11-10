@@ -307,7 +307,7 @@ def install_exe(path):
         abc = 0
         img_count = 0
         screenshots = []
-        while img_count < 4:
+        while img_count < 10:
             time.sleep(3)
             ss_path = click_screenshot
             x, y, ss = take_screenshot(ss_path)
